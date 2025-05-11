@@ -8,10 +8,6 @@ module aes_key_expansion(
   	key_expansion_out,
 	key_expansion_ready_out
 );
-
-//-----------------------------------------------------------------
-//Parameters
-//================================================================
   
   parameter STEP_IDLE			=	4'd0;
   parameter STEP_INIT   		= 	4'd1;
@@ -19,10 +15,6 @@ module aes_key_expansion(
   parameter STEP_RCON			=	4'd3;
   parameter STEP_XOR			=	4'd4;
 
-
-//---------------------------------------------------------------------------------------------
-//  Ports
-//---------------------------------------------------------------------------------------------
   input wire 		clk;
   input wire 		reset_n;
   input wire  [3:0] 	rcon_in;
@@ -31,17 +23,10 @@ module aes_key_expansion(
   output wire [127:0] 	key_expansion_out;
   output wire		key_expansion_ready_out;
 
-//---------------------------------------------------------------------------------------------
-//  Registers
-//---------------------------------------------------------------------------------------------
   reg     [127:0] 	key_expansion_reg;
   reg     [31:0] 	key_column_temp_reg;
   reg     [2:0] 	state_step_reg;
-  reg 		  	key_expansion_done_reg;
-
-//---------------------------------------------------------------------------------------------
-//  Wire
-//---------------------------------------------------------------------------------------------  
+  reg 		  	key_expansion_done_reg; 
   
   wire [7 : 0] wi_0_w,wi_1_w,wi_2_w,wi_3_w; 
   wire [7 : 0] rcon_out_w;
