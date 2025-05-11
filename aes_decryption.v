@@ -1,9 +1,3 @@
-//-------------------------------------------------------------------------------------------------
-//  File name	  : aes_encyption.v
-//  Project	  : AES128
-//  Author		  : Do Quang Huy
-//  Description	  : AES Encyption
-//-------------------------------------------------------------------------------------------------
 module aes_decryption(
 	clk,
   	reset_n, 
@@ -14,10 +8,6 @@ module aes_decryption(
   	cipher_text_out,
 	cipher_text_ready_out
 );
-
-//-----------------------------------------------------------------
-//Parameters
-//================================================================
   
   parameter STEP_IDLE			=	3'd0;
   parameter STEP_INIT   		=	3'd1;
@@ -26,10 +16,6 @@ module aes_decryption(
   parameter STEP_MIX_COLUMN		=	3'd4;
   parameter STEP_ADD_ROUND_KEY		=	3'd5;
   parameter STEP_DONE   =3'd6;
-
-//---------------------------------------------------------------------------------------------
-//  Ports
-//---------------------------------------------------------------------------------------------
   
   input wire 		clk;
   input wire 		reset_n;
@@ -41,18 +27,10 @@ module aes_decryption(
   output wire  [127:0] 	cipher_text_out;
   output wire		cipher_text_ready_out;
 
-//---------------------------------------------------------------------------------------------
-//  Registers
-//---------------------------------------------------------------------------------------------
-
   reg 	   [127:0] 	cipher_text_reg;
   reg      [31:0]   cipher_column_0_temp_reg,cipher_column_1_temp_reg,cipher_column_2_temp_reg,cipher_column_3_temp_reg;
   reg      [2:0] 	state_step_reg;
   reg 		  	cipher_text_done_reg;
-
-//---------------------------------------------------------------------------------------------
-// 	Wire
-//---------------------------------------------------------------------------------------------  
   
   wire [7:0] w0_w[0:3];
   wire [7:0] w1_w[0:3];
