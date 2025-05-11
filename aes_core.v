@@ -1,11 +1,3 @@
-//-------------------------------------------------------------------------------------------------
-//  File name	  	: aes_core.v
-//  Project		: AES128
-//  Author		: Do Quang Huy
-//  Description		: AES Core
-//-------------------------------------------------------------------------------------------------
-
-
 module aes_core(
 	clk,
  	reset_n, 
@@ -17,10 +9,6 @@ module aes_core(
 	cipher_text_ready_out
 	);
 
-//---------------------------------------------------------------------------------------------
-//  Ports
-//---------------------------------------------------------------------------------------------
-
   input wire 		clk;
   input wire 		reset_n;
   input wire 		start_in;
@@ -30,15 +18,12 @@ module aes_core(
   output wire [127:0] 	cipher_text_out;
   output wire		cipher_text_ready_out;
 
-//---------------------------------------------------------------------------------------------
-//  Registers
-//---------------------------------------------------------------------------------------------
   reg     [127:0] 	cipher_text_out_reg;
   reg 			          cipher_text_ready_out_reg;
   reg     [3:0] 	  round_reg;
   reg     [127:0] 	key_in_reg;
   reg     [127:0] 	plain_text_in_reg;
-  ////////
+  
   reg     [127:0] 	key_in_reg_de [0:11];
   reg		[127:0] key_in_de;
   reg		[3:0] counter_de;
@@ -48,9 +33,6 @@ module aes_core(
   reg [127:0] cipher_in_de;
   reg         de_cipher_text_ready_out_reg;
   reg [127:0] de_cipher_text_out_reg;
-//---------------------------------------------------------------------------------------------
-// 	Wire
-//---------------------------------------------------------------------------------------------  
 
   wire 			start_key_expand_w;
   wire 			key_expansion_ready_out_w;
@@ -58,7 +40,7 @@ module aes_core(
   wire [127:0] 		cipher_text_out_w;
   wire 			cipher_text_ready_out_w;
   wire 			start_encryption_w;
-  /////
+  
   wire    start_decryption_w;
   wire [127:0] 		de_cipher_text_out_w;
   wire 			de_cipher_text_ready_out_w;
