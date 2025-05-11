@@ -1,8 +1,3 @@
-//  File name	  : sbox_combi.v
-//  Project		   : AES128
-//  Author		    : Do Quang Huy 
-//  Referents	  : none.
-
 //Any arbitrary polynomial can be represented by bx + c where
 //b is upper half term and c is the lower half term. Therefore, 
 //from here, a binary number in Galois Field q can be spilt to qHx + qL. 
