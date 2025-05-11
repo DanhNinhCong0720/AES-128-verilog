@@ -1,9 +1,3 @@
-//-------------------------------------------------------------------------------------------------
-//  File name	  	: aes_key_expansion.v
-//  Project		: AES128
-//  Author			: Do Quang Huy
-//  Description		: AES Key Expansion 
-//-------------------------------------------------------------------------------------------------
 module aes_key_expansion(
 	clk,
   	reset_n, 
