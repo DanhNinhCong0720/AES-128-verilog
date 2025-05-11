@@ -10,8 +10,12 @@ reg   [127:0] 	plain_text_in_reg;
 
 wire [127:0] cipher_text_out_w;
 wire cipher_text_ready_out_w;
+	
+//---------------------------------------------------------------------------------------------
+//  Architecture:   Controlling to input
+//---------------------------------------------------------------------------------------------
 
-initial
+	initial
 	begin
 		clk=0;
 		reset_n=0;
