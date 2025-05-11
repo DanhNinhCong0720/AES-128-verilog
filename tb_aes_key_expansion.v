@@ -1,9 +1,3 @@
-//-------------------------------------------------------------------------------------------------
-//  File name	  	: testbench_aes.v
-//  Project		: AES128
-//  Author		    	: Do Quang Huy
-//  Description		: Test Bench AES
-//-------------------------------------------------------------------------------------------------
 `timescale 1ns/1ps
 module tb_key_expansion();
 reg 	Clk;
